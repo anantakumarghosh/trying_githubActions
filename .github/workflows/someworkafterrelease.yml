@@ -1,0 +1,13 @@
+name: Action B
+
+on:
+  create:
+  #repository_dispatch:
+    #types: [actionA_completed]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello"
+      
