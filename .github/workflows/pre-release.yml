@@ -1,0 +1,27 @@
+name: Pre-Release
+
+on:
+  workflow_dispatch:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Create pre-release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: pre-release ${{ github.ref }}
+        body: |
+          Changes in this pre-release:
+          - First change xyz
+          - Second change abc
+        draft: false
+        prerelease: true
