@@ -1,0 +1,16 @@
+name: Checkout Latest Release tag
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Latest Release
+      uses: actions/checkout@v2
+      with:
+        ref: refs/tags/$(git describe --tags `git rev-list --tags --max-count=1`)
+    - name: commit id  
+      run: git log --format="%H" -n 1
