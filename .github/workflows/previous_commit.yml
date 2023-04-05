@@ -30,9 +30,9 @@ jobs:
           fetch-depth: 0
       - run: git checkout HEAD^1  #<commit hash>  #remove hash and bracket, enter commit hash
       - run: git checkout HEAD^1
-      - run: git checkout HEAD^1
-      - run: git checkout HEAD^1
-      - run: git checkout HEAD^1
+#       - run: git checkout HEAD^1
+#       - run: git checkout HEAD^1
+#       - run: git checkout HEAD^1
 
       # Runs a single command using the runners shell
       - name: running cat command
