@@ -1,8 +1,13 @@
 name: Prereleased Workflow
 on:
-  push:
+  release:
+    types: [published]
+    prerelease: true
+    branches:
+      - main
     tags:
-      - 'v*'
+      - v*
+
 #   release:
 #     types:
 #       - prereleased
