@@ -27,8 +27,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 6
-      - run: git checkout HEAD^4  #<commit hash>  #remove hash and bracket, enter commit hash
+          fetch-depth: 0
+      - run: git checkout HEAD^1  #<commit hash>  #remove hash and bracket, enter commit hash
+      - run: git checkout HEAD^1
+      - run: git checkout HEAD^1
+      - run: git checkout HEAD^1
+      - run: git checkout HEAD^4
 
       # Runs a single command using the runners shell
       - name: running cat command
