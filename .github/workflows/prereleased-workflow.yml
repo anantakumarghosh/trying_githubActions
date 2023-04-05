@@ -1,8 +1,11 @@
 name: Prereleased Workflow
 on:
-  release:
-    types:
-      - prereleased
+  push:
+    tags:
+      - 'v*'
+#   release:
+#     types:
+#       - prereleased
 jobs:
   build:
     runs-on: ubuntu-latest
