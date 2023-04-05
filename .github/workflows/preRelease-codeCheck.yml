@@ -1,0 +1,28 @@
+name: Check pre-release code
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Install grep
+        run: sudo apt-get install grep
+      
+      - name: Check code for pre-release
+        run: grep -r "pre-release" --include=*.txt .
+      
+      - name: Check code for pre-release and save results
+        run: grep -r "pre-release" --include=*.txt . > results.txt
+      
+      - name: Check code for pre-release and set exit status
+        run: |
+          if grep -r "pre-release" --include=*.txt .; then
+            echo "Found pre-release code"
+            exit 1
+          else
+            echo "No pre-release code found"
+          fi
