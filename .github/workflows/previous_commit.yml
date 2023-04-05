@@ -32,7 +32,7 @@ jobs:
       - run: git checkout HEAD^1
       - run: git checkout HEAD^1
       - run: git checkout HEAD^1
-      - run: git checkout HEAD^4
+      - run: git checkout HEAD^1
 
       # Runs a single command using the runners shell
       - name: running cat command
